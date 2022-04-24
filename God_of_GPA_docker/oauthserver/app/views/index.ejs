@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>博仁科技-统一身份认证系统</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col">
+                <h2 class="display-3">您现在以 <%= username %>身份登录</h2>
+                <p>现在你可以在其他博仁科技网站上一键登陆辣！</p>
+            </div>
+            <div class="col align-self-center d-flex justify-content-end">
+                <a class="btn btn-primary" href="/logout" role="button">登出</a>
+            </div>
+        </div>
+        <p class="lead">想跟博人进行一些互动？</p>
+        <a class="btn btn-primary" href="/letzbrseesee" role="button">点我！</a>
+    </div>
+</div>
+
+</body>
+</html>

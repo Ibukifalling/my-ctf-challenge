@@ -1,0 +1,43 @@
+version: '3.1'
+
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: zbrzbrzbrzbrzbrzbbbbbbbr
+      # log level
+      MONGODB_SYSTEM_LOG_VERBOSITY: 5
+
+  oauthserver:
+    build: ./oauthserver
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - 3000:3000
+    environment:
+      MONGODB_PATH: mongodb://root:zbrzbrzbrzbrzbrzbbbbbbbr@mongo:27017/
+      ADMIN_UNAME: Zbr_the_God
+      ADMIN_PASS: thisisafantacypassword114514
+      OAUTH_CLIENT_URL: http://127.0.0.1:3001/
+      OAUTH_SERVER_URL: http://127.0.0.1:3000/
+
+
+  borenclass:
+    build: ./borenclass(oauth-client)
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - 3001:3001
+    environment:
+      MONGODB_PATH: mongodb://root:zbrzbrzbrzbrzbrzbbbbbbbr@mongo:27017/
+      ADMIN_UNAME: Zbr_the_God
+      OAUTH_CLIENT_URL: http://127.0.0.1:3001/
+      OAUTH_SERVER_URL: http://127.0.0.1:3000/
+      # flag
+      FLAG: MRCTF{W0w!_Y0U_4re_R3al1y_A_9ood_sTud3nt!}
+

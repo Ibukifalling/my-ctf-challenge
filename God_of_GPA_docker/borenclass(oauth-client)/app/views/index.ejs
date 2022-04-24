@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>博人课堂</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col">
+                <h2 class="display-3">用户： <%= username %></h2>
+            </div>
+            <div class="col align-self-center d-flex justify-content-end">
+                <a class="btn btn-primary" href="/logout" role="button">退出登录</a>
+                <a class="btn btn-primary" href="/getGPA" role="button">查看成绩</a>
+            </div>
+        </div>
+        <p class="lead">博人科技大学树洞(请同学们不要发表反动、色情等不良信息哟)</p>
+        <a class="btn btn-primary" href="/create" role="button">我要说点垃圾话！</a>
+    </div>
+</div>
+
+<% if(notes.length > 0){ %>
+    <div class="row row-cols-1 row-cols-md-3">
+        <% notes.forEach((note)=>{ %>
+            <div class="card" style="width: 18rem;">
+                <img src="https://md.buptmerak.cn/uploads/upload_ab4db13aae381d6a7b0d19c3f16ed3e5.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><%= note.title %></h5>
+                    <p class="card-text"><%= note.content %></p>
+                    <a href="/view/<%= note.id %>" class="card-link">康康</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+<% } %>
+
+</body>
+</html>

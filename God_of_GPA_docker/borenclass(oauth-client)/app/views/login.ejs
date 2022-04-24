@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>身份认证</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+        <a id="login">博人科技大学统一身份认证登录</a>
+
+<script>
+
+  const link = document.getElementById('login');
+  link.href = "<%= serverurl %>oauth/authorize?redirect_uri=<%= clienturl %>login";
+</script>
+
+</body>
+
+</html>

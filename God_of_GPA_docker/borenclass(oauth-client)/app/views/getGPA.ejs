@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>个人成绩</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<table class="table">
+	<caption>科目成绩-<%= student.name %> </caption>
+   <thead>
+      <tr>
+         <th>课程名称</th>
+         <th>授课教师</th>
+         <th>备注</th>
+         <th>成绩</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>密码学入门-SHA256逆运算</td>
+         <td>Lord Riot</td>
+         <td>请准备纸笔和算盘</td>
+         <td><%= student.score1 %></td>
+      </tr>
+      <tr>
+         <td>网安渗透实践入门-五角大楼getshell</td>
+         <td>Bubble GVM</td>
+         <td>上课时请使用合适的网络环境</td>
+         <td><%= student.score2 %></td>
+      </tr>
+      <tr>
+        <td>区块链安全入门-BTC双花攻击</td>
+        <td>Retr_0</td>
+        <td>请学生自备高性能服务器</td>
+        <td><%= student.score3 %></td>
+     </tr>
+     <tr>
+        <td>二进制安全入门-V8逃逸的一百种姿势</td>
+        <td>Ayoung</td>
+        <td>请同学们注意不要重复提交0day</td>
+        <td><%= student.score4 %></td>
+     </tr>
+   </tbody>
+</table>
+<h2><br><%= student.comment %></h2>
+<br>
+<a class="btn btn-primary" href="/backdoor" role="button">神秘按钮</a>
+</body>
+</html>
